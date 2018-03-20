@@ -12,7 +12,7 @@ Yellowbrick: Machine Learning Visualization
 
 我们最近正在将文档翻译成中文中，请稍后再来。
 
-并且，我们需要更多的人帮助我们完成这个任务。如果你愿意帮助我们翻译，请向 `yellowbrick-docs-zh<https://github.com/DistrictDataLabs/yellowbrick-docs-zh>`_ 提交一个pull request。如果你对支持Yellowbrick感兴趣，请向 `codebase<https://github.com/DistrictDataLabs/yellowbrick>`_ 提交一个pull request。
+并且，我们总是在寻求帮助。如果你愿意帮助我们翻译，请向 `yellowbrick-docs-zh<https://github.com/DistrictDataLabs/yellowbrick-docs-zh>`_ 提交一个pull request。如果你对支持Yellowbrick感兴趣，请向 `codebase<https://github.com/DistrictDataLabs/yellowbrick>`_ 提交一个pull request。
 
 .. image:: images/visualizers.png
 
