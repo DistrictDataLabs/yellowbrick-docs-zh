@@ -18,73 +18,75 @@ Yellowbrick: Machine Learning Visualization
 
 .. image:: images/visualizers.png
 
-Yellowbrick is a suite of visual diagnostic tools called "Visualizers" that extend the Scikit-Learn API to allow human steering of the model selection process. In a nutshell, Yellowbrick combines Scikit-Learn with Matplotlib in the best tradition of the Scikit-Learn documentation, but to produce visualizations for *your* models! For more on Yellowbrick, please see the :doc:`about`.
+Yellowbrick是由一套被称为"Visualizers"组成的可视化诊断工具组成的套餐，其由Scikit-Learn API延伸而来，对模型选择过程其指导作用。总之，Yellowbrick结合了Scikit-Learn和Matplotlib并且最好得传承了Scikit-Learn文档，对 *你的* 模型进行可视化！想要更多地了解Yellowbrick，请访问 :doc:`about` 。
 
-If you're new to Yellowbrick, checkout the :doc:`quickstart` or skip ahead to the :doc:`tutorial`. Yellowbrick is a rich library with many Visualizers being added on a regular basis. For details on specific Visualizers and extended usage head over to the :doc:`api/index`. Interested in contributing to Yellowbrick? Checkout the :ref:`contributing guide <contributing>` . If you've signed up to do user testing, head over to the :doc:`evaluation` (and thank you!).
+如果你第一次接触Yellowbrick，请查看 :doc:`quickstart` 或者直接跳到 :doc:`tutorial` 。Yellowbrick是一个丰富的库，并且定期加入多个Visualizers。想要对了解特定Visualizers的更多细节并且扩展对其使用，请前往 :doc:`api/index` 。如果你想对Yellowbrick作出贡献，请查看 :ref:`contributing guide <contributing>` 。如果你已经报名参加用户测试，请前往 :doc:`evaluation` （谢谢！）。
 
 Visualizers
 -----------
 
-Visualizers are estimators (objects that learn from data) whose primary objective is to create visualizations that allow insight into the model selection process. In Scikit-Learn terms, they can be similar to transformers when visualizing the data space or wrap an model estimator similar to how the "ModelCV" (e.g. `RidgeCV <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RidgeCV.html>`_, `LassoCV <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html>`_) methods work. The primary goal of Yellowbrick is to create a sensical API similar to Scikit-Learn. Some of our most popular visualizers include:
+Visualizers也是estimators（从数据中习得的对象），其主要任务是产生可对模型选择过程有更深入了解的视图。从Scikit-Learn来看，当可视化数据空间或者封装一个模型estimator时，其和转换器（transformers）相似，就像"ModelCV" (比如 `RidgeCV <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RidgeCV.html>`_, `LassoCV <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html>`_ )的工作原理一样。Yellowbrick的主要目标是创建一个和Scikit-Learn类似的有意义的API。其中最受欢迎的visualizers包括：
 
-Feature Visualization
+
+特征可视化
 ~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`api/features/rankd`: pairwise ranking of features to detect relationships
-- :doc:`api/features/pcoords`: horizontal visualization of instances
-- :doc:`Radial Visualization <api/features/radviz>`: separation of instances around a circular plot
-- :doc:`api/features/pca`: projection of instances based on principal components
-- :doc:`api/features/importances`: rank features by importance or linear coeficients for a specific model
-- :doc:`Scatter and Joint Plots<api/features/scatter>`: direct data visualization with feature selection
+- :doc:`api/features/rankd`: 对单个或者两两对应的特征进行排序以检测其相关性
+- :doc:`api/features/pcoords`: 对实例进行水平视图
+- :doc:`Radial Visualization <api/features/radviz>`: 在一个圆形视图中将实例分隔开
+- :doc:`api/features/pca`: 通过主成分将实例投射
+- :doc:`api/features/importances`: 基于它们在模型中的表现对特征进行排序
+- :doc:`Scatter and Joint Plots<api/features/scatter>`: 用选择的特征对其进行可视化
 
-Classification Visualization
+分类可视化
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`api/classifier/class_balance`: see how the distribution of classes affects the model
-- :doc:`api/classifier/classification_report`: visual representation of precision, recall, and F1
-- :doc:`ROC/AUC Curves <api/classifier/rocauc>`: receiver operator characteristics and area under the curve
-- :doc:`Confusion Matrices <api/classifier/confusion_matrix>`: visual description of class decision making
+- :doc:`api/classifier/class_balance`: 看类的分布怎样影响模型
+- :doc:`api/classifier/classification_report`: 用视图的方式呈现精确率，召回率和F1值
+- :doc:`ROC/AUC Curves <api/classifier/rocauc>`: 特征曲线和ROC曲线子下的面积
+- :doc:`Confusion Matrices <api/classifier/confusion_matrix>`: 对分类决定进行视图描述
 
-Regression Visualization
+回归可视化
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`api/regressor/peplot`: find model breakdowns along the domain of the target
-- :doc:`api/regressor/residuals`: show the difference in residuals of training and test data
-- :doc:`api/regressor/alphas`: show how the choice of alpha influences regularization
+- :doc:`api/regressor/peplot`: 沿着目标区域对模型进行细分
+- :doc:`api/regressor/residuals`: 显示训练数据和测试数据中残差的差异
+- :doc:`api/regressor/alphas`: 显示不同alpha值选择对正则化的影响
 
-Clustering Visualization
+聚类可视化
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`K-Elbow Plot <api/cluster/elbow>`: select k using the elbow method and various metrics
-- :doc:`Silhouette Plot <api/cluster/silhouette>`: select k by visualizing silhouette coefficient values
+- :doc:`K-Elbow Plot <api/cluster/elbow>`: 用肘部法则或者其他指标选择k值
+- :doc:`Silhouette Plot <api/cluster/silhouette>`: 通过对轮廓系数值进行视图来选择k值
 
-Text Visualization
+文本可视化
 ~~~~~~~~~~~~~~~~~~
 
-- :doc:`Term Frequency <api/text/freqdist>`: visualize the frequency distribution of terms in the corpus
-- :doc:`api/text/tsne`: use stochastic neighbor embedding to project documents.
+- :doc:`Term Frequency <api/text/freqdist>`: 对词项在语料库中的分布频率进行可视化
+- :doc:`api/text/tsne`: 用随机邻域嵌入来投射文档
 
-... and more! Visualizers are being added all the time; be sure to check the examples (or even the `develop branch <https://github.com/DistrictDataLabs/yellowbrick/tree/develop>`_) and feel free to contribute your ideas for new Visualizers!
+... 以及更多！Visualizers随时在增加中，请务必查看示例（甚至是 `develop branch <https://github.com/DistrictDataLabs/yellowbrick/tree/develop>`_ 上的），并且随时欢迎你对Visualizers贡献自己的想法。
 
-Getting Help
+获取帮助
 ------------
 
-Yellowbrick is a welcoming, inclusive project in the tradition of Matplotlib and Scikit-Learn. Similar to those projects, we try to follow the `Python Software Foundation Code of Conduct <http://www.python.org/psf/codeofconduct/>`_. Please don't hesitate to reach out to us for help or if you have any contributions or bugs to report!
+Yellowbrick是一个传承自Matplotlib和Scikit-Learn的热情包容的项目。和这些项目一样，我们遵守 `Python Software Foundation Code of Conduct <http://www.python.org/psf/codeofconduct/>`_ 。如果需要帮助、或者想要对项目进行贡献、或者发现有漏洞需要报告，请不要犹豫，随时和我们联系。
 
-The primary way to ask for help with Yellowbrick is to post on our `Google Groups Listserv <https://groups.google.com/forum/#!forum/yellowbrick>`_. This is an email list/forum that members of the community can join and respond to each other; you should be able to receive the quickest response here. Please also consider joining the group so you can respond to questions! You can also ask questions on `Stack Overflow <http://stackoverflow.com/questions/tagged/yellowbrick>`_ and tag them with "yellowbrick". Or you can add issues on GitHub. You can also tweet or direct message us on Twitter `@DistrictDataLab <https://twitter.com/districtdatalab>`_.
+寻求帮助最主要的方法是在我们的 `Google Groups Listserv <https://groups.google.com/forum/#!forum/yellowbrick>`_ 上发帖。这是社区会员可以加入以及互相回应的一个邮件列表/论坛；在这里你应该能得到最快的回应。希望你也能考虑加入这个组，这样你也可以回答问题！你也可以在 `Stack Overflow <http://stackoverflow.com/questions/tagged/yellowbrick>`_ and tag them with "yellowbrick". Or you can add issues on GitHub. You can also tweet or direct message us on Twitter `@DistrictDataLab <https://twitter.com/districtdatalab>`_ 上问问题。
 
-Open Source
+
+开源
 -----------
 
-The Yellowbrick `license <https://github.com/DistrictDataLabs/yellowbrick/blob/master/LICENSE.txt>`_ is an open source `Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_ license. Yellowbrick enjoys a very active developer community; please consider joining them and `contributing <https://github.com/DistrictDataLabs/yellowbrick/blob/develop/CONTRIBUTING.md>`_!
+Yellowbrick `license <https://github.com/DistrictDataLabs/yellowbrick/blob/master/LICENSE.txt>`_ 使用开源 `Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_ 许可证。 Yellowbrickx拥有一个非常活跃的开发者社区；请考虑加入他们并且 `贡献 <https://github.com/DistrictDataLabs/yellowbrick/blob/develop/CONTRIBUTING.md>`_ ！
 
-Yellowbrick is hosted on `GitHub <https://github.com/DistrictDataLabs/yellowbrick/>`_. The `issues <https://github.com/DistrictDataLabs/yellowbrick/issues/>`_ and `pull requests <https://github.com/DistrictDataLabs/yellowbrick/pulls>`_ are tracked there.
+Yellowbrick在 `GitHub <https://github.com/DistrictDataLabs/yellowbrick/>`_ 上托管。`issues <https://github.com/DistrictDataLabs/yellowbrick/issues/>`_ 和 `pull requests <https://github.com/DistrictDataLabs/yellowbrick/pulls>`_ 都记录在上面。
 
 
-Table of Contents
+目录
 -----------------
 
-The following is a complete listing of the Yellowbrick documentation for this version of the library:
+这个版本库的Yellowbrick文档的完整清单如下：
 
 .. toctree::
    :maxdepth: 2
@@ -98,8 +100,10 @@ The following is a complete listing of the Yellowbrick documentation for this ve
    about
    changelog
 
-Indices and tables
+索引和表格
 ------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
+
+翻译：`Juan L. Kehoe <https://juan0001.github.io/>`_

@@ -7,80 +7,81 @@
 [![Stories in Ready](https://badge.waffle.io/DistrictDataLabs/yellowbrick.png?label=ready&title=Ready)](https://waffle.io/DistrictDataLabs/yellowbrick)
 
 
-**Visual analysis and diagnostic tools to facilitate machine learning model selection.**
+**帮助选择机器学习模型的可视化分析和诊断工具**
 
-![Follow the yellow brick road](docs/images/yellowbrickroad.jpg)
-Image by [Quatro Cinco](https://flic.kr/p/2Yj9mj), used with permission, Flickr Creative Commons.
+![沿着黄砖路走下去](docs/images/yellowbrickroad.jpg)
+Image by [Quatro Cinco](https://flic.kr/p/2Yj9mj), 经许可使用, Flickr Creative Commons.
 
-This README is a guide for developers, if you're new to Yellowbrick, get started at our [documentation](http://www.scikit-yb.org/).
+这个README是针对开发者的指南，如果你对Yellowbrick感兴趣，请查看我们的[文档](http://www.scikit-yb.org/).
 
-## What is Yellowbrick?
+## 什么是Yellowbrick?
 
-Yellowbrick is a suite of visual diagnostic tools called "Visualizers" that extend the Scikit-Learn API to allow human steering of the model selection process. In a nutshell, Yellowbrick combines Scikit-Learn with Matplotlib in the best tradition of the Scikit-Learn documentation, but to produce visualizations for _your_ models!
+Yellowbrick是由一套被称为"Visualizers"组成的可视化诊断工具组成的套餐，其由Scikit-Learn API延伸而来，对模型选择过程起指导作用。总之，Yellowbrick结合了Scikit-Learn和Matplotlib并且最好得传承了Scikit-Learn文档，对 _你的_ 模型进行可视化！
 
 ![Visualizers](docs/images/visualizers.png)
 
 ### Visualizers
 
-Visualizers are estimators (objects that learn from data) whose primary objective is to create visualizations that allow insight into the model selection process. In Scikit-Learn terms, they can be similar to transformers when visualizing the data space or wrap an model estimator similar to how the "ModelCV" (e.g. RidgeCV, LassoCV) methods work. The primary goal of Yellowbrick is to create a sensical API similar to Scikit-Learn. Some of our most popular visualizers include:
+Visualizers也是estimators（从数据中习得的对象），其主要任务是产生可对模型选择过程有更深入了解的视图。从Scikit-Learn来看，当可视化数据空间或者封装一个模型estimator时，其和转换器（transformers）相似，就像"ModelCV" (比如 RidgeCV, LassoCV)的工作原理一样。Yellowbrick的主要目标是创建一个和Scikit-Learn类似的有意义的API。其中最受欢迎的visualizers包括：
 
-#### Feature Visualization
+#### 特征可视化
 
-- **Rank Features**: single or pairwise ranking of features to detect relationships
-- **Parallel Coordinates**: horizontal visualization of instances
-- **Radial Visualization**: separation of instances around a circular plot
-- **PCA Projection**: projection of instances based on principal components
-- **Feature Importances**: rank features based on their in-model performance 
-- **Scatter and Joint Plots**: direct data visualization with feature selection
+- **Rank Features**: 对单个或者两两对应的特征进行排序以检测其相关性
+- **Parallel Coordinates**: 对实例进行水平视图
+- **Radial Visualization**: 在一个圆形视图中将实例分隔开
+- **PCA Projection**: 通过主成分将实例投射
+- **Feature Importances**: 基于它们在模型中的表现对特征进行排序
+- **Scatter and Joint Plots**: 用选择的特征对其进行可视化
 
-#### Classification Visualization
+#### 分类可视化
 
-- **Class Balance**: see how the distribution of classes affects the model
-- **Classification Report**: visual representation of precision, recall, and F1
-- **ROC/AUC Curves**: receiver operator characteristics and area under the curve
-- **Confusion Matrices**: visual description of class decision making
+- **Class Balance**: 看类的分布怎样影响模型
+- **Classification Report**: 用视图的方式呈现精确率，召回率和F1值
+- **ROC/AUC Curves**: 特征曲线和ROC曲线子下的面积
+- **Confusion Matrices**: 对分类决定进行视图描述
 
-#### Regression Visualization
+#### 回归可视化
 
-- **Prediction Error Plots**: find model breakdowns along the domain of the target
-- **Residuals Plot**: show the difference in residuals of training and test data
-- **Alpha Selection**: show how the choice of alpha influences regularization
+- **Prediction Error Plots**: 沿着目标区域对模型进行细分
+- **Residuals Plot**: 显示训练数据和测试数据中残差的差异
+- **Alpha Selection**: 显示不同alpha值选择对正则化的影响
 
-#### Clustering Visualization
+#### 聚类可视化
 
-- **K-Elbow Plot**: select k using the elbow method and various metrics
-- **Silhouette Plot**: select k by visualizing silhouette coefficient values
+- **K-Elbow Plot**: 用肘部法则或者其他指标选择k值
+- **Silhouette Plot**: 通过对轮廓系数值进行视图来选择k值
 
-#### Text Visualization
+#### 文本可视化
 
-- **Term Frequency**: visualize the frequency distribution of terms in the corpus
-- **TSNE**: use stochastic neighbor embedding to project documents.
+- **Term Frequency**: 对词项在语料库中的分布频率进行可视化
+- **TSNE**: 用随机邻域嵌入来投射文档
 
-And more! Visualizers are being added all the time, be sure to check the examples (or even the develop branch) and feel free to contribute your ideas for Visualizers!
+以及更多！Visualizers随时在增加中，请务必查看示例（甚至是develop分支上的），并且随时欢迎你对Visualizers贡献自己的想法。
 
-## Installing Yellowbrick
+## 安装Yellowbrick
 
-Yellowbrick is compatible with Python 2.7 or later but it is preferred to use Python 3.5 or later to take full advantage of all functionality. Yellowbrick also depends on Scikit-Learn 0.18 or later and Matplotlib 1.5 or later. The simplest way to install Yellowbrick is from PyPI with pip, Python's preferred package installer.
+Yellowbrick和Python 2.7及以后版本兼容，但是倾向于使用Python 3.5及以后版本，这样可发挥其全部功能。Yellowbrick依赖于Scikit-Learn 0.18及以后版本和Matplotlib 1.5及以后版本。安装Yellowbrick最简单的方法就是用来自于PyPI的pip方法 —— Python首选的包安装器。
 
     $ pip install yellowbrick
 
-Note that Yellowbrick is an active project and routinely publishes new releases with more visualizers and updates. In order to upgrade Yellowbrick to the latest version, use pip as follows.
+需要注意的是Yellowbrick是一个在建的项目，目前常规发布新的版本，并且每一个新版本都将会有新的可视化功能更新。为了将Yellowbrick升级到最新版本，你可以用如下pip命令.
 
     $ pip install -u yellowbrick
 
-You can also use the `-u` flag to update Scikit-Learn, matplotlib, or any other third party utilities that work well with Yellowbrick to their latest versions.
+你也可以用 `-u` 标记对Scikit-Learn，matplotlib或者其他和Yellowbrick兼容的第三方包进行升级.
 
-If you're using Windows or Anaconda, you can take advantage of the conda utility to install Yellowbrick:
+如果你使用的是Windows或者Anaconda，你也可以充分利用conda:
 
     conda install -c districtdatalabs yellowbrick
 
-Note, however, that there is a [known bug](https://github.com/DistrictDataLabs/yellowbrick/issues/205) installing Yellowbrick on Linux with Anaconda.
+然而需要注意的是，在Linux上用Anaconda安装matplotlib时有一个 [已知的漏洞](https://github.com/DistrictDataLabs/yellowbrick/issues/205) 。
 
-## Using Yellowbrick
+## 使用Yellowbrick
 
+为了更好得配合Scikit-Learn一起使用，我们特意对Yellowbrick API进行了一些特殊设计。如下是一个比较典型的使用Scikit-Learn和Yellowbrick的工作流程。
 The Yellowbrick API is specifically designed to play nicely with Scikit-Learn. Here is an example of a typical workflow sequence with Scikit-Learn and Yellowbrick:
 
-### Feature Visualization
+### 特征可视化
 
 In this example, we see how Rank2D performs pairwise comparisons of each feature in the data set with a specific metric or algorithm, then returns them ranked as a lower left triangle diagram.
 
@@ -158,4 +159,4 @@ Glob syntax can be used to move multiple files. For example to reset all the cla
 $ python -m tests.images tests/test_classifier/*   
 ```
 
-Though it is recommended that specific test cases are targeted, rather than updating entire directories. 
+Though it is recommended that specific test cases are targeted, rather than updating entire directories.
