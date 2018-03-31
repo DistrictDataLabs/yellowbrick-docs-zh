@@ -10,7 +10,8 @@
 **帮助选择机器学习模型的可视化分析和诊断工具**
 
 ![沿着黄砖路走下去](docs/images/yellowbrickroad.jpg)
-Image by [Quatro Cinco](https://flic.kr/p/2Yj9mj), 经许可使用, Flickr Creative Commons.
+
+摄影 [Quatro Cinco](https://flic.kr/p/2Yj9mj), 经许可使用, Flickr Creative Commons.
 
 这个README是针对开发者的指南，如果你对Yellowbrick感兴趣，请查看我们的[文档](http://www.scikit-yb.org/).
 
@@ -83,7 +84,7 @@ The Yellowbrick API is specifically designed to play nicely with Scikit-Learn. H
 
 ### 特征可视化
 
-In this example, we see how Rank2D performs pairwise comparisons of each feature in the data set with a specific metric or algorithm, then returns them ranked as a lower left triangle diagram.
+下面这个例子将向我们展示Rank2D是怎样用一种特殊的算法对数据中的特征进行两两比较，然后将其结果排列至左下角三角区的视图。
 
 ```python
 from yellowbrick.features import Rank2D
@@ -94,9 +95,9 @@ visualizer.transform(X)             # Transform the data
 visualizer.poof()                   # Draw/show/poof the data
 ```
 
-### Model Visualization
+### 模型可视化
 
-In this example, we instantiate a Scikit-Learn classifier, and then we use Yellowbrick's ROCAUC class to visualize the tradeoff between the classifier's sensitivity and specificity.
+这个例子里，我们将实例化一个Scikit-Learn分类器，然后我们用Yellowbrick的ROCAUC类来对分类中的敏感度和特异性之间的权衡进行可视化。
 
 ```python
 from sklearn.svm import LinearSVC
@@ -109,54 +110,56 @@ visualizer.score(X,y)
 visualizer.poof()
 ```
 
-For additional information on getting started with Yellowbrick, check out our [examples notebook](https://github.com/DistrictDataLabs/yellowbrick/blob/develop/examples/examples.ipynb).
+想要对如何开始使用Yellowbrick有更多了解，请查看我们的 [示例笔记](https://github.com/DistrictDataLabs/yellowbrick/blob/develop/examples/examples.ipynb).
 
-We also have a [quick start guide](https://github.com/DistrictDataLabs/yellowbrick/blob/master/docs/quickstart.rst).
+还有 [快速开始指南](https://github.com/DistrictDataLabs/yellowbrick/blob/master/docs/quickstart.rst).
 
-## Contributing to Yellowbrick
+## 对Yellowbrick做出贡献
 
-Yellowbrick is an open source project that is supported by a community who will gratefully and humbly accept any contributions you might make to the project. Large or small, any contribution makes a big difference; and if you've never contributed to an open source project before, we hope you will start with Yellowbrick!
+Yellowbrick是一个开源项目，其支持社区将会谦卑地接受你对项目所做的任何贡献，并对此表示感激。不论是大还是小，任何贡献都能使其发生大的变化；如果你从来没有对开源项目进行过贡献，我们希望你能从Yellowbrick开始！
 
-Principally, Yellowbrick development is about the addition and creation of *visualizers* &mdash; objects that learn from data and create a visual representation of the data or model. Visualizers integrate with Scikit-Learn estimators, transformers, and pipelines for specific purposes and as a result, can be simple to build and deploy. The most common contribution is therefore a new visualizer for a specific model or model family. We'll discuss in detail how to build visualizers later.
+主要来讲，Yellowbrick的开发是添加和创建 *visualizers* &mdash; 对象，其通过对数据的学习创造一个对数据或者模型的可视化呈现。针对某些特定目标，Visualizers还可与Scikit-Learn的estimators，transformers以及pipelines结合使用，使其更易于创建和部署。最常见的贡献方式就是为一个特定的模型或者模型家族创建一个visualizer。我们后面将会详细讨论怎样创建一个visualizer。
 
-Beyond creating visualizers, there are many ways to contribute:
+除了创建visualizer，还有很多做贡献的方法：
 
-- Submit a bug report or feature request on [GitHub Issues](https://github.com/DistrictDataLabs/yellowbrick/issues).
-- Contribute a Jupyter notebook to our examples[ gallery](https://github.com/DistrictDataLabs/yellowbrick/tree/develop/examples).
-- Assist us with [user testing](http://www.scikit-yb.org/en/latest/evaluation.html).
-- Add to the documentation or help with our website, [scikit-yb.org](http://www.scikit-yb.org).
-- Write unit or integration tests for our project.
-- Answer questions on our issues, mailing list, Stack Overflow, and elsewhere.
-- Translate our documentation into another language.
-- Write a blog post, tweet, or share our project with others.
-- Teach someone how to use Yellowbrick.
+- 在 [GitHub Issues](https://github.com/DistrictDataLabs/yellowbrick/issues) 上提交漏洞报告或者特征请求。
+- 在我们的示例库中用Jupyter notebook的方式贡献示例 [ gallery](https://github.com/DistrictDataLabs/yellowbrick/tree/develop/examples) 。
+- 在 [user testing](http://www.scikit-yb.org/en/latest/evaluation.html) 上帮助我们
+- 在我们网站上帮我们加入文档 [scikit-yb.org](http://www.scikit-yb.org) 。
+- 对我们项目进行单元测试或者集成测试。
+- 在issues，mailing list，Stack Overflow或者其他地方帮我们回答问题。
+- 帮我们把文档翻译成其他语言。
+- 写一个博客，tweet或者和他人分享我们的项目。
+- 教别人使用Yellowbrick。
 
-As you can see, there are lots of ways to get involved and we would be very happy for you to join us! The only thing we ask is that you abide by the principles of openness, respect, and consideration of others as described in the [Python Software Foundation Code of Conduct](https://www.python.org/psf/codeofconduct/).
+正如你看到的，你可以通过多种方式加入到我们当中来。并且我们也非常开心你能加入我们！我们唯一的要求是你遵守开放的原创，尊敬并且体谅他人，就如下面描述的一样 [Python Software Foundation Code of Conduct](https://www.python.org/psf/codeofconduct/) 。
 
-For more information, checkout the `CONTRIBUTING.md` file in the root of the repository or the detailed documentation at [Contributing to Yellowbrick](http://www.scikit-yb.org/en/latest/contributing.html)
+想要了解更多，请查看  `CONTRIBUTING.md` 文件中repository的根目录或者详细的文档 [Contributing to Yellowbrick](http://www.scikit-yb.org/en/latest/contributing.html) 。
 
-## Development Scripts
+## 开发脚本
 
-Yellowbrick contains scripts to help with development, including downloading fixture data for tests and managing images for comparison.
+Yellowbrick包含对开发有帮助的脚本，包括下载测试数据的脚本和管理比较图片的脚本。
 
-### Images
+### 图片
 
-The image comparison helper script manages the test directory's `baseline_images` folder by copying files from the `actual_images` folder to setup baselines. To use this script, first run the tests (which will cause image not found errors) then copy the images into baseline as follows:
+图片比较帮手脚本通过将文件从 `actual_images` 文件夹拷贝到设置基线对测试目录的 `baseline_images` 文件夹进行管理。要用这个脚本的话，首先运行测试（会产生“image not found”错误产生），然后按照如下方式将图片拷入基线：
 
 ```
 $ python -m tests.images tests/test_visualizer.py
 ```
 
-Where `tests/test_visualizer.py` is the test file that contains the image comparison tests. All related tests will be discovered, validated, and copied to the baseline directory. To clear out images from both actual and baseline to reset tests, use the `-C` flag:
+`tests/test_visualizer.py` 是包含有图片比较测试的测试文件。所以相关的测试都会被发掘、证实，并且拷贝到基线目录。如果想要将图片从现行的或这基线的状态重设到测试状态，可用如下 `-C` 参数：
 
 ```
 $ python -m tests.images -C tests/test_visualizer.py
 ```
-
-Glob syntax can be used to move multiple files. For example to reset all the classifier tests:
+可以用Glob语法来移除多个文件。比如，将所有分类器测试重设：
 
 ```
 $ python -m tests.images tests/test_classifier/*   
 ```
 
-Though it is recommended that specific test cases are targeted, rather than updating entire directories.
+然而推荐的的方法是有针对性进行测试，而不是对整个目录进行更新。
+
+翻译：[Juan L. Kehoe](https://juan0001.github.io/)
+
